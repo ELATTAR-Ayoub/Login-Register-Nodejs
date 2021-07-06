@@ -1,0 +1,165 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: .7px;
+    text-transform: capitalize;
+    color: #3C94AE;
+    background-color: #23343E;
+}
+
+.profile-container {
+    position: relative;
+    width: 50vw;
+    height: 70vh;
+}
+
+.profile-container .back-background {
+    position: relative;
+    width: 100%;
+    height: 40%;
+    background-color: #1b7692;
+    background: url(../src/img/harrison-candlin.jpg) no-repeat center;
+    background-size: cover;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid #FFF;
+    cursor: pointer;
+}
+
+.back-background::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+    background-color: #000000;
+    top: 0;
+    left: 0;
+    opacity: .7;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.back-background::after {
+    content: 'Change Background';
+    position: absolute;
+    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.back-background:hover:before, .back-background:hover:after{
+    visibility: visible;
+}
+
+.back-background .pr-photo {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    cursor: pointer;
+}
+
+.back-background .pr-photo img {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+}
+
+.back-background .pr-photo::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    opacity: .7;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.back-background .pr-photo::after {
+    content: 'Change picture';
+    position: absolute;
+    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.pr-photo:hover:before, .pr-photo:hover:after{
+    visibility: visible;
+}
+
+.profile-container .info-section {
+    position: relative;
+    background-color: #FFF;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.info-section .pr-name {
+    position: relative;
+    color: #072E39;
+    top: -2vh;
+    font-size: 2.5em;
+}
+
+.info-section .pr-info {
+    width: 80%;
+}
+
+.info-section .pr-info hr{
+    background-color: #072E39;
+}
+
+.pr-info .pr-email, .pr-info .pr-password{
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+.pr-info .pr-e, .pr-info .pr-p {
+    font-weight: bold;
+    color: #072E39;
+}
+
+.logout {
+    background-color: #DD0F0F;
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logout:hover {
+    background-color: #d64242;
+}
+.logout:focus {
+    background-color: #b40f0f;
+}

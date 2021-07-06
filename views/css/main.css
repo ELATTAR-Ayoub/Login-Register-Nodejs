@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: .7px;
+    text-transform: capitalize;
+    color: #3C94AE;
+    background-color: #23343E;
+}
+
+.sign-in-out-container {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-container, .signup-container {
+    position: relative;
+    width: 500px;
+    height: 700px;
+    left: 50%;
+    background-color: #f8fdff;
+    border-radius: 10px;
+    transition: clip-path 1s ease-in-out; 
+
+}
+
+.signin-container{
+    box-shadow: -5px 0px 15px 0px #00000059;
+}
+
+.signup-container {
+    height: 760px;
+    box-shadow: +5px 0px 15px 0px #00000059;
+}
+
+/* Under card */
+
+.under-section {
+    position: absolute;
+    width: 700px;
+    height: 575px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(../src/img/harrison-candlin.jpg) no-repeat center;
+    background-size: cover;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*  */
+
+.sign-in-out-container .header {
+    padding: 35px;
+    padding-bottom: 5px;
+    font-size: 38px;
+    font-weight: bold;
+    color: inherit;
+    text-transform: none;
+    opacity: .8;
+}
+
+.sign-in-out-container .header::first-letter {text-transform: uppercase;}
+
+.sign-in-out-container .header span{
+    color: #072E39;
+    text-transform: uppercase;
+}
+
+.sign-in-out-container .desc {
+    color: inherit;
+    font-size: 1rem;
+    padding: 0 40px;
+    margin-bottom: 20px;
+    width: 70%;
+    opacity: .8;
+
+}
+
+/* button signin style class */
+
+.button-signin-style {
+    position: relative;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    width: 10rem;
+    background-color: #3C94AE;
+    color: #fff;
+    font-family: inherit;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 2px 5px 0px #00000087;
+    cursor: pointer;
+}
+
+/*  */
+
+.button-signin-style:hover {
+    background-color: #4cb7d7;
+}
+
+.button-signin-style:focus {
+    background-color: #2c7d95;
+}
+
+/*  */
+
+.signin-container .signin-section {
+    position: relative;
+    width: 100%;
+}
+
+
+
+.username-section, .email-section, .password-section{
+    position: relative;
+    height: 30px;
+    margin: 4rem auto;
+    width: 80%;
+}
+
+.username-section {margin-top: 10px;}
+.password-section {margin-bottom: 25px;}
+
+.username-section input, 
+.email-section input, 
+.password-section input{
+    min-width: 100%;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    padding: 15px;
+    background-color: transparent;
+    color: #000;
+
+}
+
+.submit-section {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-section input {
+    width: 80%;
+}
+
+.username-section label,
+.email-section label, 
+.password-section label{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    color: inherit;
+    pointer-events: none;
+    border-bottom: 1px solid #072E39;
+}
+
+.sign-in-out-container .username-section label::after,
+.sign-in-out-container .email-section label::after,
+.sign-in-out-container .password-section label::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid transparent;
+    /* adjust the after event in top of our normal one. */
+    left: 0;
+    bottom: -2px;
+    opacity: 0;
+    border-bottom: 3px solid #3C94AE;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.content-username,
+.content-email,
+.content-password {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: transform 0.3s ease;
+}
+
+.username-section input:focus + .label-username .content-username,
+.username-section input:valid + .label-username .content-username,
+.email-section input:focus + .label-email .content-email,
+.email-section input:valid + .label-email .content-email,
+.password-section input:focus + .label-password .content-password,
+.password-section input:valid + .label-password .content-password {
+    transform: translateY(-150%);
+    font-size: 13px;
+}
+
+.username-section input:focus + .label-username::after,
+.username-section input:valid + .label-username::after,
+.email-section input:focus + .label-email::after,
+.email-section input:valid + .label-email::after,
+.password-section input:focus + .label-password::after,
+.password-section input:valid + .label-password::after{
+    transform: translateX(0%);
+    z-index: 5;
+    opacity: 1;
+}
+
+
+.sign-in-out-container .sign-link {
+    position: relative;
+    display: block;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.sign-in-out-container .sign-using {
+    text-align: center;
+}
+
+/* links styles */
+
+.sign-in-out-container .sign-link:link {
+    color: inherit;
+}
+
+.sign-in-out-container .sign-link:hover {
+    color: #4cb7d7;
+    text-decoration: underline;
+}
+
+.sign-in-out-container .sign-link:active {
+    color: #aed7eb;
+    text-decoration: underline;
+}
+
+.sign-in-out-container .sign-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- */
+
+.sign-in-out-container .sign-social {
+    display: block;
+    position: relative;
+    padding: 10px;
+    margin: 15px auto;
+    width: 60%;
+    text-align: center;
+    background-color: #3C94AE;
+    text-decoration: none;
+    color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px #00000087;
+}
+
+.sign-in-out-container .sign-social:hover {
+    background-color: #4cb7d7;
+}
+
+.sign-in-out-container .sign-social:focus {
+    background-color: #2c7d95;
+}
+
+.facebook-link::before {
+    content: url(../src/img/facebook_24px.png);
+    position: absolute;
+    left: 25%;
+}
+.google-link::before {
+    content: url(../src/img/google_24px.png);
+    position: absolute;
+    left: 25%;
+
+}
+.twitter-link::before {
+    content: url(../src/img/twitter_squared_24px.png);
+    position: absolute;
+    left: 25%;
+
+}
+
+.signError {
+    /* visibility: hidden; */
+    color: #ff0000;
+    text-transform: lowercase;
+}
+
+.Signature {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 5px;
+    color: #FFF;
+    font-size: 2vh;
+}
+

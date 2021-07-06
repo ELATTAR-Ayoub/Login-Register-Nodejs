@@ -1,0 +1,51 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/profile.css">
+</head>
+
+<body>
+    <div class="profile-container">
+        <div class="back-background">
+            <div class="pr-photo">
+                <img src="./src/img/eren-yeager.jpg" alt="">
+            </div>
+        </div>
+        <div class=" info-section">
+            <h1 class="pr-name">
+                <%= name %>
+            </h1>
+            <div class="pr-info">
+                <div class="pr-email">
+                    <p class="pr-e">email</p>
+                    <p id="user-pr-email">
+                        <%= email %>
+                    </p>
+                </div>
+                <hr>
+                <div class="pr-password">
+                    <p class="pr-p">password</p>
+                    <p id="user-pr-password">
+                        <%= password %>
+                    </p>
+                </div>
+                <hr>
+
+            </div>
+
+        </div>
+        <form action="/logout?_method=DELETE" method="POST">
+            <button class="logout button-signin-style" type="submit">LOG OUT</button>
+        </form>
+    </div>
+    </div>
+    <p class="Signature">Created with ❤️️ by ELATTAR Ayoub</p>
+</body>
+
+</html>
+<!-- <form action="/logout?_method=DELETE" method="POST">
+    <button type="submit">LOG OUT</button>
+</form> -->
