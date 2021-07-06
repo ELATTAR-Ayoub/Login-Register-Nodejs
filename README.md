@@ -4,7 +4,7 @@ Login and Register System Created Using Node.js.
 ## Available Scripts
 In the project directory, you can run:
 
-## `npm run devstart`
+### `npm run devstart`
 
 - Runs the server.js file which runs the app in the development mode.
 - Open http://localhost:3000 to view it in the browser.
